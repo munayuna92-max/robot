@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f4">
+  <title>오창휴게소 스마트 안내</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-route="home" aria-label="홈으로 이동">
+        <span class="brand-mark">H</span>
+        <span>
+          <strong>오창휴게소</strong>
+          <small>H-ROS SMART GUIDE</small>
+        </span>
+      </button>
+      <div class="top-actions">
+        <button class="icon-button" id="languageButton" aria-label="언어 선택" title="언어 선택">KO</button>
+        <button class="icon-button" id="accessibilityButton" aria-label="큰 글씨 모드" title="큰 글씨">가+</button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="주요 메뉴">
+      <button class="nav-item active" data-route="home">
+        <span class="nav-icon">⌂</span>
+        <span>홈</span>
+      </button>
+      <button class="nav-item" data-route="stores">
+        <span class="nav-icon">☰</span>
+        <span>메뉴·대기</span>
+      </button>
+      <button class="nav-item nav-order" data-route="order">
+        <span class="nav-icon">▦</span>
+        <span>QR 주문</span>
+      </button>
+      <button class="nav-item" data-route="status">
+        <span class="nav-icon">✓</span>
+        <span>주문 현황</span>
+      </button>
+      <button class="nav-item" data-route="facilities">
+        <span class="nav-icon">⌖</span>
+        <span>시설 안내</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="storeDialog">
+    <div id="storeDialogContent"></div>
+  </dialog>
+
+  <dialog id="languageDialog">
+    <form method="dialog" class="dialog-panel language-panel">
+      <div class="dialog-heading">
+        <div>
+          <small>LANGUAGE</small>
+          <h2>언어를 선택하세요</h2>
+        </div>
+        <button class="dialog-close" value="cancel" aria-label="닫기">×</button>
+      </div>
+      <div class="language-grid">
+        <button value="ko" data-language="ko">한국어</button>
+        <button value="en" data-language="en">English</button>
+        <button value="ja" data-language="ja">日本語</button>
+        <button value="zh" data-language="zh">中文</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
